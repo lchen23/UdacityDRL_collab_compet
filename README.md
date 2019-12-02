@@ -11,6 +11,7 @@ The observation space consists of 8 variables corresponding to the position and 
 
 ## Goal
 The goal is to train agents to keep the ball boucing back and forth between them without falling to the ground or out of bounds for as long as possible in order to maximize the scores.  
+
 This task is episodic, and in order to solve the environment, the agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,  
 
 * After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.     
