@@ -9,9 +9,32 @@ In slightly modified Tennis environment, two agents control rackets to bounce a 
 
 The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
-The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,  
+## Goal
+The goal is to train agents to keep the ball boucing back and forth between the players for as long as possible in order to maximize the scores.  
+This task is episodic, and in order to solve the environment, the agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,  
 
 * After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.     
 * This yields a single score for each episode.
 
+As an example, consider the plot below, where we have plotted the score as well as the average score (over 100 consecutive episodes) obtained with each episode.  
+
+![score plot](score.png) 
 The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
+
+## Result
+A movie clip demonstrating successfully trained agents (achieving an average score of +35) is shown below. The robotic arms can follow the moving targets (rotating green ball) most of the time.  
+
+![trained agents](tennis.gif)  
+
+## Dependencies
+* Numpy
+* Matplotlib
+* PyTorch (0.4.0 or above)
+* ML-Agents toolkit (`pip install unityagents`) 
+
+## Usage
+* The Windows (64-bit) version of the environment is provided in this repo in the folder "Tennis_Windows_x86_64".
+* Mac OSX version can be downloaded [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
+* Linux version can be downloaded [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
+
+Follow the step by step instructions in **Report.ipynb** to start running the environment and training the agents.
