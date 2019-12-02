@@ -16,9 +16,10 @@ This task is episodic, and in order to solve the environment, the agents must ge
 * After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.     
 * This yields a single score for each episode.
 
-As an example, consider the plot below, where we have plotted the score as well as the average score (over 100 consecutive episodes) obtained with each episode.  
+As an example, consider the plot below, where we have plotted the score obtained with each episode (blue curve) as well as the average scores (orange curve, moving average over a window of 100 consecutive episodes).  
 
-![score plot](score.png) 
+![score plot](score.png)  
+
 The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
 
 ## Result
