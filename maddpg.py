@@ -18,7 +18,7 @@ LR_CRITIC = 1e-3  # critic learning rate
 WEIGHT_DECAY = 0  # L2 weight decay
 UPDATE_EVERY = 4  # how often to update the network
 UPDATE_TIMES = 4  # for each update, update the network how many times
-PRETRAIN_MEM_SIZE = int(5e3)
+PRETRAIN_MEM_SIZE = int(5e3) #Start learning only after 5000 experiences have been collected
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -201,7 +201,7 @@ class SADDPG:
         # Ornstein-Uhlenbeck noise
         self.noise = OU_Noise(action_size, seed)
         
-        # Make sure target is initialized with the same weight as the source (makes a big difference)
+        # Make sure target is initialized with the same weight as the source
         self.hard_update(self.actor_target, self.actor_local)
         self.hard_update(self.critic_target, self.critic_local)
 

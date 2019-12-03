@@ -65,9 +65,7 @@ class Critic(nn.Module):
         # set up fully connected layers
         self.bn0 = nn.BatchNorm1d(ma_state_size)
         self.fc1 = nn.Linear(ma_state_size, fc1_units)
-        self.bn1 = nn.BatchNorm1d(fc1_units)
         self.fc2 = nn.Linear(fc1_units + ma_action_size, fc2_units)
-        self.bn2 = nn.BatchNorm1d(fc2_units)
         self.fc3 = nn.Linear(fc2_units, 1)
         # init weights for each layer
         self.fc1.weight.data.uniform_(*weights_init(self.fc1))
